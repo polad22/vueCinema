@@ -1,0 +1,83 @@
+<DOCTYPE html>
+<html>
+<head>
+	<title>Cinema</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div class="Movie">
+		<label>Select a Branch:</label>
+		<select v-model="select_Branch">
+		<option disabled value=""> Select a Branch</option>
+		<option v-for= "branch in branches" :value='branch'>{{ branch.name }}</option>
+	</select>
+	<br>
+	<label>Select a Movie:</label>
+	<select>
+		<option disabled value="">Select a Movie</option>
+		<option :value="movie.name" v-for="movie in select_Branch.movies">{{ movie.name }} </option>
+	</select>
+	</div>
+</body>
+	<script type="text/javascript">
+	new Vue({
+		el: '.Movie',
+		data: {
+			select_Branch: '',
+			branches:[
+			{
+				name:'Cinema Baguio',
+				movies:[
+				{ name:'The Joker'},
+				{ name: 'Instellar'},
+				{ name: 'Shawshank Redemption'},
+				{ name: 'white'},
+				{ name: 'byte'}
+				]
+			},
+			{
+				name:'Cinema Cubao',
+				movies:[
+				{ name:'the blood'},
+				{ name: 'pink mommy'},
+				{ name: 'you come to here'},
+				{ name: 'beast mode'},
+				{ name: 'step mother'}
+				]
+			},
+			{
+				name:'Cinema Tarlac',
+				movies:[
+				{ name:'under my underwear'},
+				{ name: 'milk my body'},
+				{ name: 'lick my toes'},
+				{ name: 'big finger'},
+				{ name: 'slap me harder'}
+				]
+			},
+			{
+				name:'Cinema Olonggapo',
+				movies:[
+				{ name:'Soon you wil come'},
+				{ name: 'touch my nose'},
+				{ name: 'the blood of underwear'},
+				{ name: 'hard stick'},
+				{ name: 'sticky mucus'}
+				]
+			},
+			{
+				name:'Cinema Subic',
+				movies:[
+				{ name:'tool'},
+				{ name: 'scrpted'},
+				{ name: 'booty'},
+				{ name: 'slap'},
+				{ name: 'bit '}
+				]
+			},
+			]
+		}
+
+})
+</script>
+</html>
